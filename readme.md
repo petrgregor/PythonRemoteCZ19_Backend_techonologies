@@ -47,6 +47,17 @@ Vznikla nová složka s názvem viewer, která obsahuje:
 
 V souboru ./hollymovies/settings.py přidáme aplikaci viewwer do seznamu INSTALLED_APPS.
 
+## Migrace databáze
+
+Vytvoříme migrační skript:
+```python
+python manage.py makemigrations
+```
+
+Provedeme změny v databázi:
+```python
+python manage.py migrate
+```
 
 ## Rady a tipy pro finální projekt
 
