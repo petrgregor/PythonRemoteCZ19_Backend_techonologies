@@ -59,9 +59,63 @@ Provedeme změny v databázi:
 python manage.py migrate
 ```
 
+## Shell
+
+```python
+python manage.py shell
+```
+
+```shell
+from viewer.models import Genre
+Genre.objects.all()
+```
+
+## Administration 
+
+```python
+python manage.py createsuperuser
+```
+
+-> zaregistrovat modely do admin.py
+
+## DUMP/LOAD
+
+Export databáze:
+```python
+python manage.py dumpdata viewer --output fixtures.json
+```
+
+Import databáze:
+```python
+python manage.py loaddata fixtures.json
+```
+
+POZOR: Nefunguje to s diakritikou.
+
+Nainstalujeme rozšíření:
+```bash
+pip install django-dump-load_utf8
+```
+
+Přidáme řádek
+'django_dump_load_utf8',
+do INSTALLED_APPS v settings.py.
+
+```bash
+python manage.py dumpdatautf8 viewer --output fixtures.json
+```
+
+```bash
+python manage.py loaddatautf8 .\fixtures.json
+```
+
 ## Rady a tipy pro finální projekt
 
 - všichni v týmu musí mít stejnou verzi Djanga (i ostatních balíčků)
 - vytvořit readme.md soubor s popisem projektu, 
 může obsahovat i obrázky (ER diagram, screenshoty,...)
 - vytvořit git repozitář a sdílet v týmu (settings -> Collaborators)
+- uložit si seznam nainstalovaných/potřebných balíčků:
+  ```bash
+  pip freeze > requirements.txt
+  ```

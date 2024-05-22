@@ -1,0 +1,83 @@
+[
+  {
+    "model": "viewer.genre",
+    "pk": 1,
+    "fields": {
+      "name": "Horror"
+    }
+  },
+  {
+    "model": "viewer.genre",
+    "pk": 2,
+    "fields": {
+      "name": "Thriller"
+    }
+  },
+  {
+    "model": "viewer.genre",
+    "pk": 3,
+    "fields": {
+      "name": "Drama"
+    }
+  },
+  {
+    "model": "viewer.movie",
+    "pk": 1,
+    "fields": {
+      "title": "The Shawshank Redemption",
+      "genre": 3,
+      "rating": 95,
+      "released": "1994-05-16",
+      "description": "Mladý bankéř Andy Dufresne (Tim Robbins) je v roce 1947 odsouzen za vraždu své ženy a jejího milence. Přesto, že tento čin popírá, čeká na něj dvojnásobný doživotní trest v obávané věznici Shawshank. Andy se snaží přizpůsobit vězeňskému životu a po krušných začátcích se sblíží s Redem (Morgan Freeman), jenž si tu odpykává svůj doživotní trest už dvacet let. Sílu, jak přežít zdejší peklo, Andy nachází v tajném snu a skryté naději na svobodu... (Magic Box)",
+      "created": "2024-05-22T17:28:05.049Z"
+    }
+  },
+  {
+    "model": "viewer.movie",
+    "pk": 2,
+    "fields": {
+      "title": "Forrest Gump",
+      "genre": 3,
+      "rating": 94,
+      "released": "1994-05-08",
+      "description": "Poněkud prostoduchý Forrest Gump, vyzbrojen užitečnými radami své matky, se vydává na pouť životem, který mu připraví nejedno překvapení. Mnoho hořkých, ale také nádherných chvil...\r\nMladý muž jménem Forrest Gump sedí na zastávce autobusu a každému, kdo si přisedne, vypráví o svém životě. Poněkud jednoduchý chlapec se narodil v Alabamě, kde žil jen s matkou, která mu dala mnoho dobrých rad do života. Především tu, aby si nikdy nenechal od nikoho namluvit, že je jiný než ostatní. Dostala ho dokonce i do normální školy, přestože jí doporučovali zvláštní, vzhledem k jeho nízkému IQ. Forrest, terč zlomyslných vtípků a krutých žertů svých kamarádů, si tam najde přítelkyni na celý život: Jenny je půvabná blonďatá holčička, kterou zneužívá otec, a tak ji dají do výchovy babičce. Oba se stanou nerozlučnými přáteli. Jenny Forrestovi dá další cennou radu do života: když budeš mít problém, utíkej. A tak Forrest proutíká školou, pak i střední školou a nakonec vysokou, kde se osvědčí jako nejrychlejší hráč amerického fotbalu. Po svém prožívá i velké události v amerických dějinách, třeba přijetí dvou prvních černých studentů na univerzitu nebo setkání s prezidentem Kennedym... Forrest se na vše dívá svýma naivníma očima, aniž by věci zvažoval do důsledků. Řídí se upřímným citem, jako když stále a opakovaně „zachraňuje“ Jenny, jakmile se mu zdá, že jí někdo ubližuje. Když získá diplom, dá se naverbovat do armády. Doslechne se, že Jenny vyhodili ze školy kvůli nestoudným fotkám a že se pokouší v Memphisu prosadit jako zpěvačka. Navštíví ji a znovu nešikovně „zachraňuje“. Pak je poslán do Vietnamu. Ani hrůzy války tak docela nechápe, i když se při jednom útoku projde dokonalým peklem. Je zabit jeho zatím jediný přítel, černoch Bubba. Forrest, kterého chtěl Bubba přibrat jako partnera do své firmy, je zdrcený. Přesto zachrání několik dalších vojáků včetně poručíka Dana Taylora, který mu ale není pranic vděčný: jakožto člen rodiny, v níž celé generace mužů umíraly ve válkách, si přeje zemřít po boku svých mužů. A on navíc přijde o obě nohy. Zraněn je ale i Forrest a vrací se domů. Ještě ve Vietnamu v nemocnici se mu vrátí dopisy, které pravidelně psal Jenny a jejichž adresátka nebyla zastižena... Po návratu domů mu prezident Johnson udělí medaili a při prohlídce Washingtonu se přimíchá do davu protestujících proti válce. Je vyzván, aby pohovořil o Vietnamu, nejde ale zvuk. Přesto ho tisícihlavý dav zdraví jako hrdinu. Mezi přihlížejícími je i Jenny, nyní horlivá aktivistka protiválečného hnutí Černí panteři. Shledání Forresta s jeho velkou a jedinou láskou je dojemné. Prochodí spolu celou noc a povídají si. Forrest nechce, aby Jenny opět odjela, ale ta se chystá do Kalifornie. Forrest zůstává zase sám... (TV Prima)",
+      "created": "2024-05-22T17:32:12.004Z"
+    }
+  },
+  {
+    "model": "viewer.movie",
+    "pk": 3,
+    "fields": {
+      "title": "The Green Mile",
+      "genre": 3,
+      "rating": 93,
+      "released": "1999-09-11",
+      "description": "Paul Edgecomb se vrací ve vzpomínkách do roku 1935, kdy byl zaměstnán v louisianské věznici jako hlavní dozorce. Tenkrát se tam setkal s výjimečným, byť duchem prostým mužem, který byl obdařen nejen velkým srdcem, ale také nadpozemskými schopnostmi. Byl to John Coffey, neprávem odsouzený na smrt za vraždu dvou malých holčiček. V té době trpěl Paul těžkým zánětem močového měchýře a také neměl šanci zbavit se sadistického, všemi nenáviděného dozorce Percyho. Jednoho dne chce s Paulem mluvit Coffey. Když se k němu přiblíží, chytí ho rukou v rozkroku, pak šokovaného Paula pustí a on uvidí, jak černoch vypustil z úst černý oblak, a současně si uvědomí, že jeho bolestivý zánět zmizel. Coffey má zvláštní schopnost, díky které vyléčí ženu správce věznice, ke které ho tajně v noci převezou, dokonce oživí cvičenou myš jednoho vězně, kterou zabil zlomyslný Percy. John Coffey, kterého čeká smrt, přijímá svůj úděl odevzdaně a bez hořkosti. (TV Nova)",
+      "created": "2024-05-22T17:40:54.435Z"
+    }
+  },
+  {
+    "model": "viewer.movie",
+    "pk": 4,
+    "fields": {
+      "title": "Se7en",
+      "genre": 2,
+      "rating": 92,
+      "released": "1995-07-12",
+      "description": "Dva policisté (Brad Pitt a Morgan Freeman) jsou na stopě geniálního vraha, zodpovědného za sérii děsivých vražd, jejichž oběti spojuje sedm smrtelných hříchů. V jedné z rolí tohoto kvalitního trhilleru, zasazeného do temného města nasáklého bolestí a zkázou, uvidíte také Gwyneth Paltrow. David Fincher (Klub rváčů, Zodiac, Podivuhodný případ Benjamina Buttona) s dokonalou znalostí našich nejhlubších obav pevně svírá otěže akce – fyzické, psychické i spirituální – neodvratně směřující k rozuzlení, které do hloubi otřese i tou nejzatvrzelejší duší. (Magic Box)",
+      "created": "2024-05-22T17:41:41.409Z"
+    }
+  },
+  {
+    "model": "viewer.movie",
+    "pk": 5,
+    "fields": {
+      "title": "One Flew over the Cuckoo's Nest",
+      "genre": 3,
+      "rating": 92,
+      "released": "1975-03-11",
+      "description": "Předlohou k filmu Přelet nad kukaččím hnízdem byl režiséru Miloši Formanovi román Kena Keseyho, který ho psal při působení v „nemocnici pro veterány“. Snímek se stal největším mezinárodním úspěchem ve Formanově kariéře. V roce 1976 získal Oscara ve všech hlavních kategoriích – za nejlepší film, režii, mužský herecký výkon (Jack Nicholson), ženský herecký výkon (Louise Fletcherová) a scénář. Majitelem filmových a divadelních práv byl 13 let Kirk Douglas, který je postoupil svému synu Michaelovi a tím z něho udělal úspěšného producenta... Zrzavý irský rváč a profesionální karbaník Randle Patrick McMurphy si odpykává trest za opakované násilné napadení a sexuální zneužití. Místo aby se držel v pracovním táboře, hraje pomateného a nechá se poslat do zdánlivého klidu psychiatrické léčebny. Jeho životní elán a silná osobnost se v ústavu brzy střetávají s absolutismem vrchní sestry Ratchedové, která s pomocí trojice lapiduchů tyransky vládne celému ústavu. McMurphy nesnese pohled na ušlápnuté pacienty a brzy v nich probouzí poslední špetku hrdosti a radosti ze života. V zápasu s Velkou sestrou obrátí blázinec doslova vzhůru nohama. Stěny ústavu se otřásají jeho hřmotným smíchem a nespoutaným elánem. Vzpoura McMurphyho ale nemá velkou naději proti síle mašinérie zosobněné Velkou sestrou… Brilantní románová satira Kena Keseyho, mísící v sobě komiku i tragiku, přerůstá v neobyčejně působivém filmovém zpracování v silný protest proti neomezené moci a omezování každého člověka. (Česká televize)",
+      "created": "2024-05-22T17:42:20.197Z"
+    }
+  }
+]
