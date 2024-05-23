@@ -1,12 +1,12 @@
 # Django
 
 ## Instalace
-```python
+```bash
 python -m pip install django==4.1.1
 ```
 
 ## Vytvoření Django projektu
-```python
+```bash
 django-admin startproject hollymovies .
 ```
 
@@ -19,19 +19,19 @@ Ideálně i s tečkou na konci, aby projekt nebyl zbytečně vznořený.
 ## Spuštění serveru
 
 Defaultně na portu 8000: 
-```python
+```bash
 python manage.py runserver
 ```
 
 Port můžeme změnit parametrem: 
-```python
+```bash
 python manage.py runserver 8001
 ```
 
 ## Vytvoření aplikace
 
 viewer = název aplikace
-```python
+```bash
 python manage.py startapp viewer
 ```
 
@@ -50,29 +50,29 @@ V souboru ./hollymovies/settings.py přidáme aplikaci viewwer do seznamu INSTAL
 ## Migrace databáze
 
 Vytvoříme migrační skript:
-```python
+```bash
 python manage.py makemigrations
 ```
 
 Provedeme změny v databázi:
-```python
+```bash
 python manage.py migrate
 ```
 
 ## Shell
 
-```python
+```bash
 python manage.py shell
 ```
 
-```shell
+```bash
 from viewer.models import Genre
 Genre.objects.all()
 ```
 
 ## Administration 
 
-```python
+```bash
 python manage.py createsuperuser
 ```
 
@@ -81,12 +81,12 @@ python manage.py createsuperuser
 ## DUMP/LOAD
 
 Export databáze:
-```python
+```bash
 python manage.py dumpdata viewer --output fixtures.json
 ```
 
 Import databáze:
-```python
+```bash
 python manage.py loaddata fixtures.json
 ```
 
