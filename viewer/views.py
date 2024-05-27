@@ -47,3 +47,16 @@ def movie(request, pk):
         return render(request, "movie.html", context)
     return movies(request)
     #return reverse_lazy('movies')
+
+
+def genres(request):
+    genres = Genre.objects.all()
+    context = {'genres': genres}
+    return render(request, "genres.html", context)
+
+
+def genre(request, pk):
+    genre = Genre.objects.get(id=pk)
+    movies = Movie.objects.filter(genre__id=pk)
+    context = {'genre': genre, 'movies': movies}
+    return render(request, "movies_by_genre.html", context)
