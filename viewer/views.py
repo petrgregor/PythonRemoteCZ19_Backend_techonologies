@@ -1,6 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.views import View
+from django.views.generic import TemplateView, ListView
 
 from viewer.models import *
 
@@ -60,3 +62,25 @@ def genre(request, pk):
     movies = Movie.objects.filter(genre__id=pk)
     context = {'genre': genre, 'movies': movies}
     return render(request, "movies_by_genre.html", context)
+
+
+# CBV: Class-Based Views
+## View class
+class MoviesView(View):
+    def get(self, request):
+        movies = Movie.objects.all()
+        context = {'movies': movies}
+        return render(request, "movies.html", context)
+
+
+## TemplateView class
+class MoviesTemplateView(TemplateView):
+    template_name = "movies.html"
+    extra_context = {'movies': Movie.objects.all()}
+
+
+## ListView class
+class MoviesListView(ListView):
+    template_name = "movies2.html"
+    model = Movie
+    # pozor: do template se posílá jako object_list

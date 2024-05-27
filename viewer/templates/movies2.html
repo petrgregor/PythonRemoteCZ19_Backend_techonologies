@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>List of movies</h1>
+<ul>
+    {% for movie in object_list %}
+        <li><a href="{% url 'movie' movie.id %}">{{ movie.title }}</a> ({{ movie.released.year }}) - {{ movie.genre }}</li>
+    {% empty %}
+        <p>V databázi není žádný film.</p>
+    {% endfor %}
+</ul>
+{% endblock %}
