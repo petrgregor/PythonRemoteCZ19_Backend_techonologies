@@ -14,6 +14,10 @@ class Genre(Model):
     def __str__(self):
         return f"{self.name}"
 
+    def movies_count(self):
+        #return Movie.objects.filter(genre=self).count()
+        return self.movie_set.all().count()
+
 
 class Movie(Model):
     title = CharField(max_length=185, null=False, blank=False)  # https://cs.wikipedia.org/wiki/Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon

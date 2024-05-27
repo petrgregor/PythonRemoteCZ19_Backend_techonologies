@@ -4,7 +4,16 @@
 <h1>List of genres</h1>
 <ul>
     {% for genre in genres %}
-        <li><a href="{% url 'genre' genre.id %}">{{ genre.name }}</a></li>
+        <li>
+            {% if genre.movies_count %}
+                <a href="{% url 'genre' genre.id %}">
+            {% endif %}
+            {{ genre.name }}
+            {% if genre.movies_count %}
+                </a>
+            {% endif %}
+            (count: {{ genre.movies_count }})
+        </li>
     {% endfor %}
 </ul>
 {% endblock %}
