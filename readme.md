@@ -94,7 +94,7 @@ POZOR: Nefunguje to s diakritikou.
 
 Nainstalujeme rozšíření:
 ```bash
-pip install django-dump-load_utf8
+pip install django-dump-load-utf8
 ```
 
 Přidáme řádek
