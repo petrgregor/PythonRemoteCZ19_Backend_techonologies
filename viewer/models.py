@@ -29,10 +29,30 @@ class Country(Model):
         return f"{self.name}"
 
 
+class People(Model):
+    name = CharField(max_length=32)
+    surname = CharField(max_length=32)
+    date_of_birth = DateField(null=True, blank=True)
+    date_of_death = DateField(null=True, blank=True)
+    place_of_birth = CharField(max_length=64, null=True, blank=True)
+    place_of_death = CharField(max_length=64, null=True, blank=True)
+    country = ForeignKey(Country, null=True, on_delete=SET_NULL)
+    biography = TextField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['surname', 'name', 'date_of_birth']
+        verbose_name_plural = 'People'
+
+    def __str__(self):
+        return f"{self.name} {self.surname} ({self.date_of_birth.year})"
+
+
 class Movie(Model):
     title_orig = CharField(max_length=185, null=False, blank=False)  # https://cs.wikipedia.org/wiki/Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon
     title_cz = CharField(max_length=185, null=True, blank=False)
     countries = ManyToManyField(Country, blank=True, related_name='movies')
+    directors = ManyToManyField("viewer.People", blank=True, related_name='directs')
+    actors = ManyToManyField(People, blank=True, related_name='acts')
     #genre = ForeignKey(Genre, on_delete=DO_NOTHING)
     genres = ManyToManyField(Genre, blank=True, related_name='movies')
     length = IntegerField(null=True, blank=True)
@@ -61,4 +81,5 @@ class Movie(Model):
         for country in self.countries.all():
             result += f"{country}, "
         return result[:-2]
+
 
