@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{{ movie.title }}</h1>
+<h1>{{ movie.title_orig }}</h1>
 <div class="movie-details">
-    <div class="movie-genre">Žánr: {{ movie.genre }}</div>
+    <div class="movie-genre">Žánry: {{ movie.print_genres }} </div>
     <div class="movie-rating">Hodnocení: {{ movie.rating }}</div>
     <div class="movie-released">Premiéra: {{ movie.released }}</div>
     <div class="movie-description">Popis: {{ movie.description }}</div>

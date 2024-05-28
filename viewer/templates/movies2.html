@@ -4,7 +4,7 @@
 <h1>List of movies</h1>
 <ul>
     {% for movie in object_list %}
-        <li><a href="{% url 'movie' movie.id %}">{{ movie.title }}</a> ({{ movie.released.year }}) - {{ movie.genre }}</li>
+        <li><a href="{% url 'movie' movie.id %}">{{ movie.title_orig }}</a> ({{ movie.released.year }})</li>
     {% empty %}
         <p>V databázi není žádný film.</p>
     {% endfor %}

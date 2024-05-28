@@ -149,5 +149,6 @@ class GenreTemplateView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         pk = self.kwargs['pk']
-        context["movies"] = Movie.objects.filter(genre__id=pk)
+        context["genre"] = Genre.objects.get(id=pk)
+        context["movies"] = Movie.objects.filter(genres__id=pk)
         return context
