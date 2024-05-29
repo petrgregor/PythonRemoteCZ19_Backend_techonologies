@@ -152,3 +152,9 @@ class GenreTemplateView(TemplateView):
         context["genre"] = Genre.objects.get(id=pk)
         context["movies"] = Movie.objects.filter(genres__id=pk)
         return context
+
+
+class CreatorsListView(ListView):
+    template_name = "creators.html"
+    model = People
+    context_object_name = "creators"

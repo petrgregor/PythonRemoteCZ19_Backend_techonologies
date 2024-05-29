@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>List of creators</h1>
+<ul>
+    {% for creator in creators %}
+        <li>{{ creator }}</li>
+    {% empty %}
+        <p>V databázi není žádný tvůrce.</p>
+    {% endfor %}
+</ul>
+{% endblock %}
