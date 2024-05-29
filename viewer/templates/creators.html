@@ -4,7 +4,7 @@
 <h1>List of creators</h1>
 <ul>
     {% for creator in creators %}
-        <li>{{ creator }}</li>
+        <li><a href="{% url 'creator' creator.id %}"> {{ creator }} </a></li>
     {% empty %}
         <p>V databázi není žádný tvůrce.</p>
     {% endfor %}

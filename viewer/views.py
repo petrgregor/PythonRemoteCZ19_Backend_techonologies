@@ -158,3 +158,13 @@ class CreatorsListView(ListView):
     template_name = "creators.html"
     model = People
     context_object_name = "creators"
+
+
+class CreatorTemplateView(TemplateView):
+    template_name = "creator.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        pk = self.kwargs['pk']
+        context["creator"] = People.objects.get(id=pk)
+        return context

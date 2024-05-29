@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="display-4">{{ creator.name }} {{ creator.surname }}</h1>
+    <div class=" mt-4">
+        <div class="mb-2"><strong>Datum narození:</strong> {{ creator.date_of_birth }}</div>
+        <div class="mb-2"><strong>Místo narození:</strong> {{ creator.place_of_birth }}</div>
+        <div class="mb-2"><strong>Země:</strong> {{ creator.country }}</div>
+        <div class="p-3 mb-2 bg-light"><strong>Biografie:</strong> {{ creator.biography }}</div>
+    </div>
+</div>
+{% endblock %}
