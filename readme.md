@@ -186,3 +186,5 @@ může obsahovat i obrázky (ER diagram, screenshoty,...)
   ```bash
   pip freeze > requirements.txt
   ```
+- výsledné stránky (ne tamplates) otestovat, zda jsou validní: https://validator.w3.org/nu/#textarea
+

@@ -1,6 +1,6 @@
 {% load static %}
-
-<html {% if LANGUAGE_CODE %}lang="{{ LANGUAGE_CODE }}" {% endif %}>
+<!DOCTYPE html>
+<html {% if LANGUAGE_CODE %}lang="{{ LANGUAGE_CODE }}" {% else %} lang="EN" {% endif %}>
 
 <head>
     <meta charset="utf-8">

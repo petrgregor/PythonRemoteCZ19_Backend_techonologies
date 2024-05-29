@@ -82,4 +82,14 @@ class Movie(Model):
             result += f"{country}, "
         return result[:-2]
 
+    def print_directors(self):
+        result = ""
+        for director in self.directors.all():
+            result += f"{director}, "
+        return result[:-2]
 
+    def print_actors(self):
+        result = ""
+        for actor in self.actors.all():
+            result += f"{actor}, "
+        return result[:-2]
