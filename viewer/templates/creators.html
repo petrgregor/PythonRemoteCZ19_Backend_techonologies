@@ -1,12 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>List of creators</h1>
+
+<h1>List of directors</h1>
 <ul>
     {% for creator in creators %}
-        <li><a href="{% url 'creator' creator.id %}"> {{ creator }} </a></li>
-    {% empty %}
-        <p>V databázi není žádný tvůrce.</p>
+        {% if creator.directs.all.count %}
+            <li><a href="{% url 'creator' creator.id %}"> {{ creator }} </a></li>
+        {% endif %}
     {% endfor %}
 </ul>
+
+<h1>List of actors</h1>
+<ul>
+    {% for creator in creators %}
+        {% if creator.acts.all.count %}
+            <li><a href="{% url 'creator' creator.id %}"> {{ creator }} </a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
 {% endblock %}

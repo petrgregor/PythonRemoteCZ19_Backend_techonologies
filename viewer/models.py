@@ -1,3 +1,5 @@
+from datetime import date
+
 from django.db.models import *  #(Model, CharField, ForeignKey, DO_NOTHING,
                                 #IntegerField, DateField, TextField, DateTimeField)
 
@@ -31,7 +33,7 @@ class Country(Model):
 
 class People(Model):
     name = CharField(max_length=32)
-    surname = CharField(max_length=32)
+    surname = CharField(max_length=32, null=True, blank=True)
     date_of_birth = DateField(null=True, blank=True)
     date_of_death = DateField(null=True, blank=True)
     place_of_birth = CharField(max_length=64, null=True, blank=True)
@@ -44,7 +46,37 @@ class People(Model):
         verbose_name_plural = 'People'
 
     def __str__(self):
-        return f"{self.name} {self.surname} ({self.date_of_birth.year})"
+        result = ""
+        if self.name:
+            result += self.name
+        if self.surname:
+            result += " " + self.surname
+        if self.date_of_birth:
+            result += f" ({self.date_of_birth.year})"
+        return result
+
+    # andrej
+    def calculate_age(self):
+        if self.date_of_birth is None:
+            return None
+        if self.date_of_death:
+            end_date = self.date_of_death
+        else:
+            end_date = date.today()
+        age = end_date.year - self.date_of_birth.year - ((end_date.month, end_date.day) < (self.date_of_birth.month, self.date_of_birth.day))
+        return age
+
+    # jiri
+    @property
+    def current_age(self):
+        if not self.date_of_birth:
+            return None
+        today = date.today()
+        age = today.year - self.date_of_birth.year
+        if today.month < self.date_of_birth.month or (
+                today.month == self.date_of_birth.month and today.day < self.date_of_birth.day):
+            age -= 1
+        return age
 
 
 class Movie(Model):

@@ -7,8 +7,16 @@
     <div class="movie-details mt-4">
         <div class="movie-genres mb-2"><strong>Žánry:</strong> {{ movie.print_genres }}</div>
         <div class="movie-countries mb-2"><strong>Země:</strong> {{ movie.print_countries }}</div>
-        <div class="movie-director mb-2"><strong>Režie:</strong> {{ movie.print_directors }}</div>
-        <div class="movie-cast mb-2"><strong>Hrají:</strong> {{ movie.print_actors }}</div>
+        <div class="movie-director mb-2"><strong>Režie:</strong>
+            {% for director in movie.directors.all %}
+                <a href="{% url 'creator' director.id %}">{{ director }}</a>{% if not forloop.last %},{% endif %}
+            {% endfor %}
+        </div>
+        <div class="movie-cast mb-2"><strong>Hrají:</strong>
+            {% for actor in movie.actors.all %}
+                <a href="{% url 'creator' actor.id %}">{{ actor }}</a>{% if not forloop.last %},{% endif %}
+            {% endfor %}
+        </div>
         <div class="movie-length mb-2"><strong>Délka:</strong> {{ movie.length }} min</div>
         <div class="movie-rating mb-2"><strong>Hodnocení:</strong> {{ movie.rating }}</div>
         <div class="movie-released mb-2"><strong>Premiéra:</strong> {{ movie.released }}</div>
