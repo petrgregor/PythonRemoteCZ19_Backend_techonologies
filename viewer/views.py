@@ -1,3 +1,5 @@
+from concurrent.futures._base import LOGGER
+
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -173,6 +175,7 @@ class CreatorTemplateView(TemplateView):
 
 
 # Forms
+"""
 class MovieForm(Form):
     title_orig = CharField(max_length=185)  # https://cs.wikipedia.org/wiki/Lopadotemachoselachogaleokranioleipsanodrimhypotrimmatosilphioparaomelitokatakechymenokichlepikossyphophattoperisteralektryonoptekephalliokigklopeleiolagoiosiraiobaphetraganopterygon
     title_cz = CharField(max_length=185, required=False)
@@ -184,7 +187,7 @@ class MovieForm(Form):
     rating = IntegerField(min_value=0, max_value=100, required=False)
     released = DateField()
     description = CharField(widget=Textarea, required=False)
-
+"""
 
 """
 class MovieCreateView(FormView):
@@ -192,7 +195,7 @@ class MovieCreateView(FormView):
     form_class = MovieForm
 """
 
-
+"""
 class MovieCreate(View):
 
     def get(self, request):
@@ -212,15 +215,54 @@ class MovieCreate(View):
                 description=description
             )
         return movies(request)
+"""
+
+
+def capitalized_validator(value):
+    if value[0].islower():
+        raise ValidationError('Value must be capitalized.')
+
+
+class PastMonthField(DateField):
+
+    def validate(self, value):
+        super().validate(value)
+        if value >= date.today():
+            raise ValidationError('Only past dates allowed here.')
+
+    def clean(self, value):
+        result = super().clean(value)
+        return date(year=result.year, month=result.month, day=1)
 
 
 class MovieModelForm(ModelForm):
     class Meta:
         model = Movie
         fields = '__all__'
+        #fields = ['title_cz', 'title_orig']
+        #exclude = ['title_cz']
+        #exclude = []
+
+    rating = IntegerField(min_value=0, max_value=100, required=False)
+    length = IntegerField(min_value=1, required=False)
+
+    def clean_title_orig(self):
+        initial = self.cleaned_data['title_orig']
+        return initial.strip()
+
+    def clean_title_cz(self):
+        initial = self.cleaned_data['title_cz']
+        return initial.strip()
+
+    """def clean(self):
+        pass"""
 
 
 class MovieCreateView(CreateView):
     template_name = 'form.html'
     form_class = MovieModelForm
     success_url = reverse_lazy('movies')
+
+    def form_invalid(self, form):
+        LOGGER.warning('Invalid data in MovieCreateView.')
+        return super().form_invalid(form)

@@ -32,7 +32,7 @@ urlpatterns = [
     #path('movies/', MoviesTemplateView.as_view(), name='movies'),  # class-based view: TemplateView class
     path('movies/', MoviesListView.as_view(), name='movies'),  # class-based view: ListView class
     path('movie/create/', MovieCreateView.as_view(), name='movie_create'),
-    path('create_movie/', MovieCreate.as_view()),
+    #path('create_movie/', MovieCreate.as_view()),
     #path('movie/<pk>/', movie, name='movie'),  # function view
     #path('movie/<pk>/', MovieView.as_view(), name='movie'),  # CBV: View
     path('movie/<pk>/', MovieTemplateView.as_view(), name='movie'),  # CBV: TemplateView

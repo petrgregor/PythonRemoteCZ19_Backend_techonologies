@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form method="POST" action="/create_movie/">
+<form method="POST">
     {% csrf_token %}
     <table>{{ form }}</table>
     <input type="submit" value="Submit" class="btn btn-primary">
