@@ -31,7 +31,9 @@ urlpatterns = [
     #path('movies/', MoviesView.as_view(), name='movies'),  # class-based view: View class
     #path('movies/', MoviesTemplateView.as_view(), name='movies'),  # class-based view: TemplateView class
     path('movies/', MoviesListView.as_view(), name='movies'),  # class-based view: ListView class
-    # path('movie/<pk>/', movie, name='movie'),  # function view
+    path('movie/create/', MovieCreateView.as_view(), name='movie_create'),
+    path('create_movie/', MovieCreate.as_view()),
+    #path('movie/<pk>/', movie, name='movie'),  # function view
     #path('movie/<pk>/', MovieView.as_view(), name='movie'),  # CBV: View
     path('movie/<pk>/', MovieTemplateView.as_view(), name='movie'),  # CBV: TemplateView
     #path('genres/', genres, name='genres'),  # functional view
@@ -43,5 +45,4 @@ urlpatterns = [
     path('genre/<pk>/', GenreTemplateView.as_view(), name='genre'),  # CBV: TemplateView
     path('creators/', CreatorsListView.as_view(), name='creators'),
     path('creator/<pk>/', CreatorTemplateView.as_view(), name='creator'),
-
 ]
