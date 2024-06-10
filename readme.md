@@ -176,6 +176,41 @@ pulp_fiction.save()
 Movie.objects.filter(title__contains='Godfather').delete()
 ```
 
+## Add another
+https://django-addanother.readthedocs.io/en/latest/
+
+`pip install django_addanother`
+
+Do `settings.py` vložit do INSTALLED_APPS: 'django_addanother',
+
+Do `views.pyv do formuláře do podtřídy `Meta` přidáme widget:
+```
+widgets = {
+            'directors': AddAnotherWidgetWrapper(
+                SelectMultiple,
+                reverse_lazy('creator_create')
+            )
+        }
+```
+
+Do template form_movie.html přidáme:
+`{% load static %}`
+
+a do formuláře:
+```
+<script src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+{{ form.media }}
+```
+
+Do view `PeopleCreateView(CreatePopupMixin, CreateView):` přidáme `CreatePopupMixin`
+
+Do šablony base.html přidáme: 
+```
+{% if not view.is_popup %}
+...
+{% endif %}
+```
+
 ## Rady a tipy pro finální projekt
 
 - všichni v týmu musí mít stejnou verzi Djanga (i ostatních balíčků)

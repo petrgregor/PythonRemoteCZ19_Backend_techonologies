@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 
+{% load static %}
+
 {% block content %}
 <form method="POST">
     {% csrf_token %}
     <table>{{ form }}</table>
     {% comment %}{{ form.as_p }}{% endcomment %}
     {% comment %}<ul>{{ form.as_ul }}</ul>{% endcomment %}
+    <script src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+    {{ form.media }}
     <input type="submit" value="Submit" class="btn btn-primary">
 </form>
 {% endblock %}

@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form.non_field_errors }}
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                {{ form.name.errors }}
+                <label for="{{ form.name.id_for_label }}">Name: </label>
+                {{ form.name }}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                {{ form.surname.errors }}
+                <label for="{{ form.surname.id_for_label }}">Surname: </label>
+                {{ form.surname }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                {{ form.date_of_birth.errors }}
+                <label for="{{ form.date_of_birth.id_for_label }}">Date of birth:</label>
+                {{ form.date_of_birth }}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                {{ form.place_of_birth.errors }}
+                <label for="{{ form.place_of_birth.id_for_label }}">Place of birth:</label>
+                {{ form.place_of_birth }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                {{ form.date_of_death.errors }}
+                <label for="{{ form.date_of_death.id_for_label }}">Date of death:</label>
+                {{ form.date_of_death }}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                {{ form.place_of_death.errors }}
+                <label for="{{ form.place_of_death.id_for_label }}">Place of death:</label>
+                {{ form.place_of_death }}
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form.country.errors }}
+        <label for="{{ form.country.id_for_label }}">Country:</label>
+        {{ form.country }}
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                {{ form.biography.errors }}
+                <label for="{{ form.biography.id_for_label }}">Biography:</label>
+                {{ form.biography }}
+            </div>
+        </div>
+    </div>
+
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>
+{% endblock %}

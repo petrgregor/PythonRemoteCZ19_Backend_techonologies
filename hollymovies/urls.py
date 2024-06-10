@@ -44,5 +44,9 @@ urlpatterns = [
     #path('genre/<pk>/', GenreView.as_view(), name='genre'),  # CBV: View
     path('genre/<pk>/', GenreTemplateView.as_view(), name='genre'),  # CBV: TemplateView
     path('creators/', CreatorsListView.as_view(), name='creators'),
+    #path('creator/create/', PeopleCreateFormView.as_view(), name='creator_create'),
+    path('creator/create/', PeopleCreateView.as_view(), name='creator_create'),
+    path('creator/update/<pk>/', PeopleUpdateView.as_view(), name='creator_update'),
+    path('creator/delete/<pk>/', PeopleDeleteView.as_view(), name='creator_delete'),
     path('creator/<pk>/', CreatorTemplateView.as_view(), name='creator'),
 ]

@@ -6,7 +6,11 @@
 <ul>
     {% for creator in creators %}
         {% if creator.directs.all.count %}
-            <li><a href="{% url 'creator' creator.id %}"> {{ creator }} </a></li>
+            <li>
+                <a href="{% url 'creator' creator.id %}"> {{ creator }} </a>
+                <a href="{% url 'creator_update' creator.id %}">✏️</a>
+                <a href="{% url 'creator_delete' creator.id %}">❌</a>
+            </li>
         {% endif %}
     {% endfor %}
 </ul>
@@ -15,7 +19,11 @@
 <ul>
     {% for creator in creators %}
         {% if creator.acts.all.count %}
-            <li><a href="{% url 'creator' creator.id %}"> {{ creator }} </a></li>
+            <li>
+                <a href="{% url 'creator' creator.id %}"> {{ creator }} </a>
+                <a href="{% url 'creator_update' creator.id %}">✏️</a>
+                <a href="{% url 'creator_delete' creator.id %}">❌</a>
+            </li>
         {% endif %}
     {% endfor %}
 </ul>
