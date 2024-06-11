@@ -2,12 +2,12 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h1 class="display-4">{{ creator.name }} {% if creator.surname %}{{ creator.surname }}{% endif %}</h1>
+    <h1 class="display-4">{{ creator.name }} {% if creator.surname %}{{ creator.surname|upper }}{% endif %}</h1>
     <div class=" mt-4">
-        <div class="mb-2"><strong>Datum narození:</strong> {{ creator.date_of_birth }} ({{ creator.calculate_age }} let)</div>
+        <div class="mb-2"><strong>Datum narození:</strong> {{ creator.date_of_birth|date:"j. n. Y" }} ({{ creator.calculate_age }} let)</div>
         <div class="mb-2"><strong>Místo narození:</strong> {{ creator.place_of_birth }}</div>
         {% if creator.date_of_death %}
-            <div class="mb-2"><strong>Datum úmrtí:</strong> {{ creator.date_of_death }}</div>
+            <div class="mb-2"><strong>Datum úmrtí:</strong> {{ creator.date_of_death|date:"j. n. Y" }}</div>
         {% endif %}
         {% if creator.place_of_death %}
             <div class="mb-2"><strong>Místo úmrtí:</strong> {{ creator.place_of_death }}</div>

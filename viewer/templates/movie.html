@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container mt-5">
-    <h1 class="display-4">{{ movie.title_orig }}</h1>
+    <h1 class="display-4">{{ movie.title_orig|upper }}</h1>
     <div class="movie-title-cz text-muted">{{ movie.title_cz }}</div>
     <div class="movie-details mt-4">
         <div class="movie-genres mb-2"><strong>Žánry:</strong> {{ movie.print_genres }}</div>
@@ -19,7 +19,7 @@
         </div>
         <div class="movie-length mb-2"><strong>Délka:</strong> {{ movie.length }} min</div>
         <div class="movie-rating mb-2"><strong>Hodnocení:</strong> {{ movie.rating }}</div>
-        <div class="movie-released mb-2"><strong>Premiéra:</strong> {{ movie.released }}</div>
+        <div class="movie-released mb-2"><strong>Premiéra:</strong> {{ movie.released|date:"j. n. Y" }}</div>
         <br>
         <div class="movie-description p-3 mb-2 bg-light"><strong>Popis:</strong> {{ movie.description }}</div>
     </div>
