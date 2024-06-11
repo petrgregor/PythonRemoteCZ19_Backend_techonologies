@@ -29,7 +29,9 @@
         {% endif %}
         <div class="p-3 mb-2 bg-light"><strong>Biografie:</strong> {{ creator.biography }}</div>
     </div>
-    <a href="{% url 'creator_update' creator.id %}" class="btn btn-primary">update</a>
-    <a href="{% url 'creator_delete' creator.id %}" class="btn btn-danger">delete</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'creator_update' creator.id %}" class="btn btn-primary">update</a>
+        <a href="{% url 'creator_delete' creator.id %}" class="btn btn-danger">delete</a>
+    {% endif %}
 </div>
 {% endblock %}

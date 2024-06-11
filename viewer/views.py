@@ -1,5 +1,7 @@
 from concurrent.futures._base import LOGGER
 
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -28,6 +30,7 @@ def hello3(request):
     return HttpResponse(f'Hello, {s} world!')
 
 
+@login_required
 def hello4(request):
     adjectives = ['nice', 'beautiful', 'cruel', 'blue', 'green']
     context = {'adjectives': adjectives, 'name': 'Petr'}
@@ -267,7 +270,7 @@ class MovieModelForm(ModelForm):
         pass"""
 
 
-class MovieCreateView(CreateView):
+class MovieCreateView(LoginRequiredMixin, CreateView):
     template_name = 'form.html'
     form_class = MovieModelForm
     success_url = reverse_lazy('movies')
@@ -352,7 +355,7 @@ class PeopleModelForm(ModelForm):
         return initial_data
 
 
-class PeopleCreateView(CreatePopupMixin, CreateView):
+class PeopleCreateView(LoginRequiredMixin, CreatePopupMixin, CreateView):
     template_name = 'form_creator.html'
     form_class = PeopleModelForm
     success_url = reverse_lazy('creators')
@@ -362,7 +365,7 @@ class PeopleCreateView(CreatePopupMixin, CreateView):
         return super().form_invalid(form)
 
 
-class PeopleUpdateView(UpdateView):
+class PeopleUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'form_creator.html'
     model = People
     form_class = PeopleModelForm
@@ -373,7 +376,7 @@ class PeopleUpdateView(UpdateView):
         return super().form_invalid(form)
 
 
-class PeopleDeleteView(DeleteView):
+class PeopleDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'creator_confirm_delete.html'
     model = People
     success_url = reverse_lazy('creators')
