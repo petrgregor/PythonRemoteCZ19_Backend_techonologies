@@ -1,7 +1,7 @@
 from concurrent.futures._base import LOGGER
 
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin, UserPassesTestMixin
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -270,10 +270,11 @@ class MovieModelForm(ModelForm):
         pass"""
 
 
-class MovieCreateView(LoginRequiredMixin, CreateView):
+class MovieCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'form.html'
     form_class = MovieModelForm
     success_url = reverse_lazy('movies')
+    permission_required = 'viewer.add_movie'
 
     def form_invalid(self, form):
         LOGGER.warning('Invalid data in MovieCreateView.')
@@ -338,7 +339,6 @@ class PeopleModelForm(ModelForm):
         model = People
         fields = '__all__'
 
-
     #date_of_birth = DateField(widget=SelectDateWidget)
     date_of_birth = DateField(widget=NumberInput(attrs={'type': 'date'}))
     date_of_death = DateField(widget=NumberInput(attrs={'type': 'date'}))
@@ -355,31 +355,40 @@ class PeopleModelForm(ModelForm):
         return initial_data
 
 
-class PeopleCreateView(LoginRequiredMixin, CreatePopupMixin, CreateView):
+class PeopleCreateView(PermissionRequiredMixin, CreatePopupMixin, CreateView):
     template_name = 'form_creator.html'
     form_class = PeopleModelForm
     success_url = reverse_lazy('creators')
+    permission_required = 'viewer.add_people'
 
     def form_invalid(self, form):
         LOGGER.warning('User provided invalid data.')
         return super().form_invalid(form)
 
 
-class PeopleUpdateView(LoginRequiredMixin, UpdateView):
+class PeopleUpdateView(PermissionRequiredMixin, UpdateView):
     template_name = 'form_creator.html'
     model = People
     form_class = PeopleModelForm
     success_url = reverse_lazy('creators')
+    permission_required = 'viewer.change_people'
 
     def form_invalid(self, form):
         LOGGER.warning('User provided invalid data while updating a creator.')
         return super().form_invalid(form)
 
 
-class PeopleDeleteView(LoginRequiredMixin, DeleteView):
+## Authorization test
+class StaffRequiredMixin(UserPassesTestMixin):
+    def test_func(self):
+        return self.request.user.is_staff
+
+
+class PeopleDeleteView(StaffRequiredMixin, PermissionRequiredMixin, DeleteView):
     template_name = 'creator_confirm_delete.html'
     model = People
     success_url = reverse_lazy('creators')
+    permission_required = 'viewer.delete_people'
 
 
 # TODO: GenreCreateView
@@ -389,4 +398,6 @@ class PeopleDeleteView(LoginRequiredMixin, DeleteView):
 # TODO: CountryCreateView
 # TODO: CountryUpdateView
 # TODO: CountryDeleteView
+
+
 

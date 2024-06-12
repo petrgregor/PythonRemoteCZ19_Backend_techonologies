@@ -29,8 +29,10 @@
         {% endif %}
         <div class="p-3 mb-2 bg-light"><strong>Biografie:</strong> {{ creator.biography }}</div>
     </div>
-    {% if user.is_authenticated %}
+    {% if perms.viewer.change_people %}
         <a href="{% url 'creator_update' creator.id %}" class="btn btn-primary">update</a>
+    {% endif %}
+    {% if perms.viewer.delete_people %}
         <a href="{% url 'creator_delete' creator.id %}" class="btn btn-danger">delete</a>
     {% endif %}
 </div>

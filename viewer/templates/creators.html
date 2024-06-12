@@ -8,8 +8,10 @@
         {% if creator.directs.all.count %}
             <li>
                 <a href="{% url 'creator' creator.id %}"> {{ creator }} </a>
-                {% if user.is_authenticated %}
+                {% if perms.viewer.change_people %}
                     <a href="{% url 'creator_update' creator.id %}">✏️</a>
+                {% endif %}
+                {% if perms.viewer.delete_people %}
                     <a href="{% url 'creator_delete' creator.id %}">❌</a>
                 {% endif %}
             </li>
@@ -23,8 +25,10 @@
         {% if creator.acts.all.count %}
             <li>
                 <a href="{% url 'creator' creator.id %}"> {{ creator }} </a>
-                {% if user.is_authenticated %}
+                {% if perms.viewer.change_people %}
                     <a href="{% url 'creator_update' creator.id %}">✏️</a>
+                {% endif %}
+                {% if perms.viewer.delete_people %}
                     <a href="{% url 'creator_delete' creator.id %}">❌</a>
                 {% endif %}
             </li>
