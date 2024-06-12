@@ -211,6 +211,22 @@ Do šablony base.html přidáme:
 {% endif %}
 ```
 
+# Vygenerování ER diagramu
+- stáhnout Graphiz: https://graphviz.org/download/
+- nainstalovat `pip install graphviz`
+- nainstalovat `pip install django-extensions`
+- vložit 'django_extensions' do settings.py od INSTALLED_APPS
+- do settings.py přidat nastavení grafu:
+```python
+GRAPH_MODELS = {
+  'all_applications': True,
+  'graph_models': True,
+}
+```
+- nainstalovat `pip install pyparsing pydot`
+- spustíme příkaz `python manage.py graph_models -a > erd.dot`
+- spustíme příkaz `python manage.py graph_models --pydot -a -g -o erd.png`
+
 ## Rady a tipy pro finální projekt
 
 - všichni v týmu musí mít stejnou verzi Djanga (i ostatních balíčků)

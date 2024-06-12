@@ -70,6 +70,20 @@
     }
   },
   {
+    "model": "viewer.country",
+    "pk": 3,
+    "fields": {
+      "name": "Germany"
+    }
+  },
+  {
+    "model": "viewer.country",
+    "pk": 4,
+    "fields": {
+      "name": "Slovak"
+    }
+  },
+  {
     "model": "viewer.people",
     "pk": 1,
     "fields": {
@@ -165,6 +179,104 @@
       "place_of_death": null,
       "country": 1,
       "biography": "Po tom, čo strávil niekoľko rokov v súbore Boston Repertory Theater a študovaním herectva v New Yorku, sa zaľúbil do Broadwaya, ale aj iných dosiek, znamenajúcich svet. V celovečerákoch hrá od 80. rokov (INSIDE MOVES Richarda Donnera). Dlhé roky pracoval pre TV, kde získal popularitu seriálmi ST. ELSEWHERE a BIG WAVE DAVE´S a v 21. storočí sa ku nim vrátil seriálom TAXI (Hack) s Georgeom Dzundzom.\r\n\r\nRobustný D. M. je expert na výrazné vedľajšie úlohy á la Tom Sizemore, s tým, že k strhnutiu pozornosti nepotrebuje agresiu, ale naopak, postáva nenápadne v úzadí a ako major Baxter v akčne bombe Michaela Baya SKALA kryje za cenu vlastnej smrti odhodlane chrbát vzbúrenému generálovi Edovi Harrisovi, ako Brutus Howell hlavnému bacharovi Tomovi Hanksovi, ktorý so svojimi mužmi na ZELENEJ MÍLI musí popraviť obrovského zabijaka s liečiteľskými schopnosťami, alebo zosnulý otec Jodie Fosterovej, ktorá sa v Zemeckisovom \"sci-fi s myšlienkou\" KONTAKT vydáva do vesmíru na šialený let, na ktorého konci má byť blízke stretnutie 3. druhu.\r\n\r\nNejaký čas bol oporou režírujúceho herca Seana Penna (THE INDIAN RUNNER, THE CROSSING GUARD). Od pohľadu dobrák, po ktorého boku sa ženy a deti cítia bezpečne. Paradoxne aj preto zaujmú jeho pomerne ojedinelé záporné úlohy, z nich vyzdvihnime nenápadného stvoriteľa vražedného vírusu v kultovke Terryho Gilliama 12 OPÍC a veliteľa jednotky S.W.A.T. v thrilleri VYJEDNÁVAČ, kde nemal dosť pochopenia pre umiernene jednajúceho Kevina Spaceyho.\r\n\r\nNa začiatku 90. rokov hral v nepochopenom \"detskom thrilleri\" DOBRÝ SYNČEK, kde proti sebe režisér Joseph Ruben postavil vtedajšie detské idoly Macaulay Culkin vs. Elijah Wood. Nasledoval thriller ÚTEK DO MEXIKA s vtedajším párom snov Kim Basingerová - Alec Baldwin, Aptedov lekársky thriller SMRTIACA LIEČBA, kde s Billom Nunnom bol na strane Zla ako protivník dobráckeho Dr. Hugha Granta, pátrajúceho na vlastné riziko po záhadných zmiznutiach bezdomovcov. Objavil sa v režijnom debute Antonia Banderasa LETO V ALABAME. Príležitosť dostal v PROOF OF LIFE Taylora Hackforda, ako Peter Bowman, ktorý je v Južnej Amerike zajatý teroristami a kým sa snaží zachrániť si život a rozum, jeho manželka Meg Ryanová a vyjednávač Russell Crowe odolávajú citom, ktoré medzi nimi prepukli. Vzhľadom k tomu, že film sa preslávil údajným románikom, ktorý Crowe a Ryanová mali a evidentne ním bili úplne pohltení, je to napokon DM, kto zaujal čistým prejavom obyčajného chlapíka, ktorý sa musí postarať sám o seba v neobyčajných podmienkach.\r\n\r\nDobre sa naňho pozeralo ako na už dospelého, zasneného hrdinu v nehororovej kingovčine HEARTS IN ATLANTIS Scotta Hicksa, kde v ňom pohreb vyvolá spomienky na detské časy prvej lásky a nájemníka - staršieho pána (Anthony Hopkins) s nadprirodzenými schopnosťami, prenasledovaného tajomnými mužmi v klobúkoch. Jeho meno je spojené aj s kontroverzným muzikálom Larsa von Triera TANEČNICA V TME."
+    }
+  },
+  {
+    "model": "viewer.people",
+    "pk": 8,
+    "fields": {
+      "name": "Madonna",
+      "surname": null,
+      "date_of_birth": "1958-08-16",
+      "date_of_death": null,
+      "place_of_birth": "Bay City, Michigan, USA",
+      "place_of_death": null,
+      "country": 1,
+      "biography": "Madonna Loise Cicconne sa narodila v mestečku Bay City pri Detroite, v štáte Michigan. Je tretím z ôsmich detí. Po smrti matky, keď mala Madonna päť rokov, sa rodina presťahovala do Rochestru, kde Nonni, ako ju volá otec, zmaturovala. Ustavičné hádky s otcom a macochou spôsobili Madonnin útek do New Yorku v roku 1978, kde sa chcela stať profesionálnou tanečníčkou.\r\n\r\nMadonnu väčšina ľudí pozná ako škandalóznu speváčku, image makerku a podnikateľku v pravom zmysle slova. Ak sa jej meno spája so žánrom filmovým, znamená zväčša kritikou zavrhnutú katastrofu. Madonna sa však neustále pokúša presadiť vo filme. Jej herecké pokusy dokonca začali skôr než jej úspešná kariéra pop star.\r\n\r\nFilmovým debutom, bol pre Madonnu nízkorozpočtový snímok CERTAIN SACRIFICE, kde Madonna stvárnila zvrátenú Brunu. Sama neskôr priznala, že jedinou motiváciou boli pre ňu peniaze. V nasledujúcich rokoch sa rozbehla jej spevácka kariéra, kde dosiahla v pomerne krátkej dobe všetko, o čom mohla iba snívať. Stala sa najpopulárnejšou ženou šoubiznisu. Presadiť vo filme sa jej paradoxne nielenže nedarilo, ale filmy s ňou doslova prepadali a slečna Cicconne sa stala horúcou kandidátkou na Zlatú malinu zakaždým, keď sa objavila vo filme. HĽADÁM SUZAN: ZNAČKA ZÚFALO bol ďaľší z neúspešných pokusov o filmové uznanie.\r\n\r\nAko 27 ročná sa vydala za amerického herca Seana Penna, s ktorým si zahrala vo filme ŠANGHAJSKÉ PREKVAPENIE. Film tradične skončil fiaskom - rovnako ako aj ich dvojročné manželstvo. Zatiaľ čo Madonnine hudobné úspechy nemali konca a každý z jej singlov figuroval na čele hitparád, vo filmovej branži bola považovaná za najhoršiu herečku na svete. Tento titul si obhájila i filmom KTO JE TO DIEVČA a filmovým spracovaním komiksovej predlohy DICK TRACY. Tu hrala Breathless Mahoney po boku Warrena Beattyho, s ktorým v tej dobe trávila veľa času aj v posteli. Film síce opäť prepadol, ale titulná skladba Sooner or Later si cenu akadémie odniesla.\r\n\r\nDokumentárny film S MADONNOU V POSTELI ponúkal pohľad do zákulisia koncertného turné Blond Ambition Tour a kritika ho opäť prijala negatívne. Do tej doby asi jediným Madonniným filmom, ktorý nebol doslova zmietnutý zo stola, bol film VEĽKÉ VÍŤAZSTVO, príbeh dievčenskej basebalovej ligy počas 2. svetovej vojny.\r\n\r\nDeväťdesiate roky pre sexuálny symbol, akým Madonna nepochybne bola, znamenali krízové obdobie aj v hudobnom priemysle. Jej tehdajší presexualizovaný look a image prijímali s nadšením iba homosexuáli, pre ktorých sa stala ikonou všetkých čias. Erotický thriller TELO AKO DOKAZ zaznamenal v Madonninej kariére ďaľší neúspech pred kamerou. \"Film bol brak, ja som v ňom však bola skvelá.\" - komentovala popová diva svoj výkon. Ďaľší snímok HAZARDNÁ HRA z roku 1993 len utvrdil svet v tom, že Madonna hrať proste nevie. Ona sama sa však nevzdávala svojho snu stať sa uznávanou aj ako herečka.\r\n\r\nV roku 1994 sa Madonna veľmi zaujímala o rolu mafiánskej manželky vo filme Casino. Tú však dostala Sharon Stone. Pre režisérov Madonnina účasť vo filme totižto znamenala istý neúspech. Vo filme ŠTYRI IZBY získala malú rolu čarodejnice v jednej zo štyroch epizód.\r\n\r\nZlomovým filmom sa pre Madonninu hereckú kariéru stal muzikál Alana Parkera EVITA. Tu Madonna nechala za sebou kandidátky, akými boli Meryl Streep, či Michelle Pfeiffer. Jej list samotnému režisérovi, kde ho uistila, že práve ona je tou pravou na stvárnenie argentínskej modly a buditeľky národa Evy Perónovej, sa tentokrát vyplatil a Madonna získala svoj prvý Zlatý Glóbus a nomináciu na cenu filmovej akadémie premenila pieseň You Must Love Me. V tej dobe sa Madonne narodila dcéra Lourdes Maria.\r\n\r\nOd tohto výrazného úspechu však Madonna opäť pokračuje vo svojom filmovom štandarte opovrhovanej herečky. Opäť obdržala negatívne hodnotenia za film SPRÁVNA VEC, kde k úspechu nepomohol ani oscarový režisér John Schlesinger. V roku 2000 sa Madonna vydala za anglického režiséra Guya Ritchieho, s ktorým okrem syna Rocca spodila aj ďaľší filmový prepadák TROSEČNÍCI. To jednak upevnilo Madonninu zlú hereckú reputáciu a tiež otriaslo i tou Ritchieho, ktorý mal do tej doby so svojimi filmami oveľa väčšie úspechy.\r\n\r\nV súčasnej dobe Madonna žije v Londýne so svojou rodinou, pracuje na muzikáli HELLO SUCKERS a prednedávnom požičala hlas princeznej Selenii v animovanej rozprávke ARTHUR. Okrem speváckych aktivít je náruživou stúpenkyňou židovskej kabaly a autorkou detských knižiek."
+    }
+  },
+  {
+    "model": "viewer.people",
+    "pk": 9,
+    "fields": {
+      "name": "Petr",
+      "surname": "Gregor",
+      "date_of_birth": "1990-01-01",
+      "date_of_death": null,
+      "place_of_birth": "",
+      "place_of_death": "",
+      "country": 1,
+      "biography": ""
+    }
+  },
+  {
+    "model": "viewer.people",
+    "pk": 13,
+    "fields": {
+      "name": "Petr",
+      "surname": null,
+      "date_of_birth": "2024-02-04",
+      "date_of_death": "2024-06-24",
+      "place_of_birth": null,
+      "place_of_death": null,
+      "country": 2,
+      "biography": ""
+    }
+  },
+  {
+    "model": "viewer.people",
+    "pk": 14,
+    "fields": {
+      "name": "Martin",
+      "surname": null,
+      "date_of_birth": "1981-10-16",
+      "date_of_death": "2024-06-10",
+      "place_of_birth": null,
+      "place_of_death": null,
+      "country": 2,
+      "biography": ""
+    }
+  },
+  {
+    "model": "viewer.people",
+    "pk": 15,
+    "fields": {
+      "name": "Radek",
+      "surname": null,
+      "date_of_birth": "2024-06-10",
+      "date_of_death": "2024-06-12",
+      "place_of_birth": null,
+      "place_of_death": null,
+      "country": 2,
+      "biography": ""
+    }
+  },
+  {
+    "model": "viewer.people",
+    "pk": 16,
+    "fields": {
+      "name": "Frank",
+      "surname": null,
+      "date_of_birth": "2024-06-10",
+      "date_of_death": "2024-06-13",
+      "place_of_birth": null,
+      "place_of_death": null,
+      "country": 4,
+      "biography": ""
+    }
+  },
+  {
+    "model": "viewer.people",
+    "pk": 17,
+    "fields": {
+      "name": "martin",
+      "surname": "novák",
+      "date_of_birth": null,
+      "date_of_death": null,
+      "place_of_birth": null,
+      "place_of_death": null,
+      "country": 4,
+      "biography": ""
     }
   },
   {
@@ -314,6 +426,23 @@
         8,
         2
       ]
+    }
+  },
+  {
+    "model": "viewer.movie",
+    "pk": 7,
+    "fields": {
+      "title_orig": "Pelíšky",
+      "title_cz": "Pelíšky",
+      "length": 116,
+      "rating": 91,
+      "released": "1999-05-05",
+      "description": null,
+      "created": "2024-05-30T17:15:48.190Z",
+      "countries": [],
+      "directors": [],
+      "actors": [],
+      "genres": []
     }
   }
 ]

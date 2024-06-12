@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'django_dump_load_utf8',
     'django_addanother',
+    'django_extensions',
 
     # Our applications
     'viewer',
@@ -131,3 +132,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+GRAPH_MODELS = {
+  'all_applications': True,
+  'graph_models': True,
+}
