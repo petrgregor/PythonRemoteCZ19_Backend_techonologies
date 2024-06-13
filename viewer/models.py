@@ -5,7 +5,7 @@ from django.db.models import *  #(Model, CharField, ForeignKey, DO_NOTHING,
 
 
 class Genre(Model):
-    name = CharField(max_length=16, null=False, blank=False)
+    name = CharField(max_length=16, null=False, blank=False, unique=True)
 
     class Meta:
         ordering = ['name']
@@ -21,7 +21,7 @@ class Genre(Model):
 
 
 class Country(Model):
-    name = CharField(max_length=64, null=False, blank=False)
+    name = CharField(max_length=64, null=False, blank=False, unique=True)
 
     class Meta:
         ordering = ['name']
@@ -100,7 +100,7 @@ class Movie(Model):
         return f"<Movie: {self.title_orig}>"
 
     def __str__(self):
-        return f"{self.title_orig} ({self.released})"
+        return f"{self.title_orig} ({self.released.year})"
 
     def print_genres(self):
         result = ""

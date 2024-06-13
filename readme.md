@@ -227,6 +227,18 @@ GRAPH_MODELS = {
 - spustíme příkaz `python manage.py graph_models -a > erd.dot`
 - spustíme příkaz `python manage.py graph_models --pydot -a -g -o erd.png`
 
+## Testy
+V každé aplikaci máme soubor `tests.py`, do kterého můžeme vkládat testy.
+Je možné vytvořit další soubory s testy, název by měl ideálně začínat `test*.py`.
+
+Příkaz pro testování je: `python manage.py test` spustí všechny testy v souborech začínající `test`.
+
+Příkaz pro testování `python manage.py test viewer.test_models` spustí všechny testy v souboru 
+`test_models.py` v aplikaci `viewer`.
+
+Základní testy se spouští na virtuální databázi, která má stejné schéma, jako naše definovaná 
+databáze v `models.py`, ale je prázdná a nezávislá na skutečné databázi.
+
 ## Rady a tipy pro finální projekt
 
 - všichni v týmu musí mít stejnou verzi Djanga (i ostatních balíčků)
