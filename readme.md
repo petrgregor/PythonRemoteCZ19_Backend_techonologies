@@ -239,6 +239,14 @@ Příkaz pro testování `python manage.py test viewer.test_models` spustí vše
 Základní testy se spouští na virtuální databázi, která má stejné schéma, jako naše definovaná 
 databáze v `models.py`, ale je prázdná a nezávislá na skutečné databázi.
 
+### Testy GUI
+Nainstalujeme si selenium (pro práci s webovou stránkou): `pip install selenium`
+
+Pro provoz musí být spuštěný server.
+
+POZOR: Zde již pracujme s reálným projektem, tedy i s reálnou databází.
+
+
 ## Rady a tipy pro finální projekt
 
 - všichni v týmu musí mít stejnou verzi Djanga (i ostatních balíčků)
