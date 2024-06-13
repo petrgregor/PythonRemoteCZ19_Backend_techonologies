@@ -96,3 +96,6 @@ class MovieModelTest(TestCase):
         genre_count = Genre.objects.filter(name="Drama").count()
         print(f"test_genre_unique: Czech={genre_count}")
         self.assertEqual(genre_count, 1)
+
+
+# TODO: test People

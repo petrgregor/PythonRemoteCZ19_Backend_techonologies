@@ -347,11 +347,18 @@ class PeopleModelForm(ModelForm):
         initial_name = self.cleaned_data['name']  # původní name od uživatele
         return initial_name.strip().capitalize()  # odstraníme prázdné znaky na začátku a konci textu + zvětšíme první znak
 
+    def clean_surname(self):
+        initial_surname = self.cleaned_data['surname']  # původní name od uživatele
+        return initial_surname.strip().capitalize()  # odstraníme prázdné znaky na začátku a konci textu + zvětšíme první znak
+
     def clean(self):
         initial_data = super().clean()
-        if initial_data['date_of_birth'] and initial_data['date_of_death']:
-            if initial_data['date_of_birth'] >= initial_data['date_of_death']:
-                raise ValidationError("Date of death must be after date of birth.")
+        try:
+            if initial_data['date_of_birth'] and initial_data['date_of_death']:
+                if initial_data['date_of_birth'] >= initial_data['date_of_death']:
+                    raise ValidationError("Date of death must be after date of birth.")
+        except KeyError:
+            pass
         return initial_data
 
 
