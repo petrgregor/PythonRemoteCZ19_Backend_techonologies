@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from viewer.models import Movie
+from viewer.models import Movie, People
 
 
 class MovieSerializer(serializers.ModelSerializer):
@@ -18,3 +18,10 @@ class MovieDetailSerializer(serializers.ModelSerializer):
         model = Movie
         fields = '__all__'
 """
+
+
+class CreatorSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = People
+        fields = '__all__'

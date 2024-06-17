@@ -279,6 +279,16 @@ class Movies(mixins.ListModelMixin, generics.GenericAPIView):
 Do `urls.py` vložíme novou cestu:
 `path('api/movies/', api.views.Movies.as_view()),`
 
+Je vhodné omezit práci s API jen na uživatele, které mají oprávnění. 
+Do `settings.py` vložíme:
+```python
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ]
+}
+```
+
 ## Rady a tipy pro finální projekt
 
 - všichni v týmu musí mít stejnou verzi Djanga (i ostatních balíčků)

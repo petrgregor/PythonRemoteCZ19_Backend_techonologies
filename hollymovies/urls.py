@@ -66,4 +66,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/movies/', api.views.Movies.as_view()),
     path('api/movie/<pk>/', api.views.MovieDetail.as_view()),
+    path('api/creators/', api.views.Creators.as_view()),
+    path('api/creator/<pk>/', api.views.CreatorDetail.as_view()),
 ]
