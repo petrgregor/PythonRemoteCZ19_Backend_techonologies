@@ -90,6 +90,39 @@ DATABASES = {
     }
 }
 
+"""
+DATABASES = {
+    'default': {
+        'ENGINE:': 'django.db.backends.postgresql',
+        'NAME': 'hollymovies',
+        'USER': 'petrgregor',
+        'PASSWORD': 'mojeheslo',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+"""
+
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': 'path_to/my.cnf'
+        }
+    }
+}
+
+# my.cnf
+[client]
+database = NAME,
+user = USER,
+password = PASSWORD,
+default-character-set = utf8
+"""
+
+# MongoDB: https://www.mongodb.com/resources/products/compatibilities/mongodb-and-django
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
