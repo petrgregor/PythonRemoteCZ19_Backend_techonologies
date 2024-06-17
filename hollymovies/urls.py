@@ -13,15 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import rest_framework
+
 from django.contrib import admin
 from django.contrib.auth.views import LoginView
 from django.urls import path, include
 
+import api
+from api.views import *
 from accounts.views import SubmittableLoginView, SignUpView, SubmittablePasswordChangeView
 from viewer.views import *
-
-
-
 
 
 urlpatterns = [
@@ -61,4 +62,8 @@ urlpatterns = [
     path('accounts/signup/', SignUpView.as_view(), name='signup'),          # vlastní view pro signup
     path('accounts/password_change/', SubmittablePasswordChangeView.as_view(), name='password_change'),
     path('accounts/', include('django.contrib.auth.urls')),                 # defaultní view v django
+
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('api/movies/', api.views.Movies.as_view()),
+    path('api/movie/<pk>/', api.views.MovieDetail.as_view()),
 ]

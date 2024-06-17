@@ -41,10 +41,12 @@ INSTALLED_APPS = [
     'django_dump_load_utf8',
     'django_addanother',
     'django_extensions',
+    'rest_framework',
 
     # Our applications
     'viewer',
     'accounts',
+    'api',
 ]
 
 MIDDLEWARE = [

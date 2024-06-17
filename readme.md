@@ -246,6 +246,38 @@ Pro provoz musí být spuštěný server.
 
 POZOR: Zde již pracujme s reálným projektem, tedy i s reálnou databází.
 
+## API
+Vytvoříme novou aplikaci pro API: `python manage.py startapp api`
+
+Do souboru `setting.py` vložíme `api` do `INSTALLED_APPS`.
+
+Nainstalujeme si rest framework: `pip install djangorestframework`.
+
+Do souboru `setting.py` vložíme `rest_framework` do `INSTALLED_APPS`.
+
+Protože api vrací soubor, nemusíme řešit templates.
+
+Vytvoříme serializer v souboru `api.serializers.py`:
+```python
+class MovieListSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Movie
+        fields = '__all__'
+```
+
+Vytvoříme view v `api.views.py`:
+```python
+class Movies(mixins.ListModelMixin, generics.GenericAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieListSerializer
+
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+```
+
+Do `urls.py` vložíme novou cestu:
+`path('api/movies/', api.views.Movies.as_view()),`
 
 ## Rady a tipy pro finální projekt
 
