@@ -3,6 +3,13 @@
 {% block content %}
 <div class="container mt-5">
     <h1 class="display-4">{{ creator.name }} {% if creator.surname %}{{ creator.surname|upper }}{% endif %}</h1>
+    <div class="creator-images">
+        {% for image in creator.images.all %}
+            <span class="creator-image">
+                <img src="{{ image.image.url }}" width="150px">
+            </span>
+        {% endfor %}
+    </div>
     <div class=" mt-4">
         <div class="mb-2"><strong>Datum narození:</strong> {{ creator.date_of_birth|date:"j. n. Y" }} ({{ creator.calculate_age }} let)</div>
         <div class="mb-2"><strong>Místo narození:</strong> {{ creator.place_of_birth }}</div>

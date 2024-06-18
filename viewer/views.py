@@ -112,7 +112,9 @@ class MovieTemplateView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         pk = self.kwargs['pk']
-        context["movie"] = Movie.objects.get(id=pk)
+        movie_ = Movie.objects.get(id=pk)
+        context["movie"] = movie_
+        context["images"] = Image.objects.filter(movie=movie_)
         return context
 
 

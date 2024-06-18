@@ -289,6 +289,20 @@ REST_FRAMEWORK = {
 }
 ```
 
+## Obrázky 
+Nainstalujeme package Pillow: `python -m pip install Pillow`
+
+V `models.py` používáme `ImageField`: `image = ImageField(upload_to='images/', default=None, null=False, blank=False)`
+
+V `settings.py` přidáme cesty:
+```python
+MEDIA_ROOT = os.path.join(BASE_DIR, '')
+MEDIA_URL = 'images/'
+```
+
+V `urls.py` přidáme za konec seznamu cest:
+`+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)`
+
 ## Rady a tipy pro finální projekt
 
 - všichni v týmu musí mít stejnou verzi Djanga (i ostatních balíčků)

@@ -4,6 +4,13 @@
 <div class="container mt-5">
     <h1 class="display-4">{{ movie.title_orig|upper }}</h1>
     <div class="movie-title-cz text-muted">{{ movie.title_cz }}</div>
+    <div class="movie-images">
+        {% for image in images %}
+            <span class="movie-image">
+                <img src="{{ image.image.url }}" alt="{{ image.description }}" width="150px">
+            </span>
+        {% endfor %}
+    </div>
     <div class="movie-details mt-4">
         <div class="movie-genres mb-2"><strong>Žánry:</strong> {{ movie.print_genres }}</div>
         <div class="movie-countries mb-2"><strong>Země:</strong> {{ movie.print_countries }}</div>

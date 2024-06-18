@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 import rest_framework
+from django.conf.urls.static import static
 
 from django.contrib import admin
 from django.contrib.auth.views import LoginView
@@ -22,6 +23,7 @@ from django.urls import path, include
 import api
 from api.views import *
 from accounts.views import SubmittableLoginView, SignUpView, SubmittablePasswordChangeView
+from hollymovies import settings
 from viewer.views import *
 
 
@@ -68,4 +70,4 @@ urlpatterns = [
     path('api/movie/<pk>/', api.views.MovieDetail.as_view()),
     path('api/creators/', api.views.Creators.as_view()),
     path('api/creator/<pk>/', api.views.CreatorDetail.as_view()),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
