@@ -305,6 +305,9 @@ V `urls.py` přidáme za konec seznamu cest:
 
 V template zobrazujeme obrázek pomocí `<img src="{{ image.image.url }}">`
 
+U formuláře pro vkládání souborů musíme definovat: 
+`<form method="POST" enctype="multipart/form-data">`
+
 ## Rady a tipy pro finální projekt
 
 - všichni v týmu musí mít stejnou verzi Djanga (i ostatních balíčků)

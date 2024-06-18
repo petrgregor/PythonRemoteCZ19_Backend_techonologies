@@ -59,6 +59,8 @@ urlpatterns = [
     path('creator/delete/<pk>/', PeopleDeleteView.as_view(), name='creator_delete'),
     path('creator/<pk>/', CreatorTemplateView.as_view(), name='creator'),
 
+    path('image/create/', ImageCreateView.as_view(), name='image_create'),
+
     #path('accounts/login/', LoginView.as_view(), name='login'),
     path('accounts/login/', SubmittableLoginView.as_view(), name='login'),  # vlastní view pro login
     path('accounts/signup/', SignUpView.as_view(), name='signup'),          # vlastní view pro signup

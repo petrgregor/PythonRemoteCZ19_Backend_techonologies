@@ -20,6 +20,9 @@
                     {% if perms.viewer.add_people %}
                         <a class="nav-item nav-link active" href="{% url 'creator_create' %}">Add creator</a>
                     {% endif %}
+                    {% if perms.viewer.add_image %}
+                        <a class="nav-item nav-link active" href="{% url 'image_create' %}">Add image</a>
+                    {% endif %}
 
                 </div>
             </div>

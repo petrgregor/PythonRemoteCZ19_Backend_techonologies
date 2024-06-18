@@ -408,5 +408,25 @@ class PeopleDeleteView(StaffRequiredMixin, PermissionRequiredMixin, DeleteView):
 # TODO: CountryUpdateView
 # TODO: CountryDeleteView
 
+# TODO: ImageForm
+class ImageModelForm(ModelForm):
+    class Meta:
+        model = Image
+        fields = '__all__'
 
 
+# TODO: ImageCreateView
+class ImageCreateView(PermissionRequiredMixin, CreateView):
+    template_name = 'form_image.html'
+    form_class = ImageModelForm
+    success_url = reverse_lazy('home')
+    permission_required = 'viewer.add_image'
+
+    def form_invalid(self, form):
+        LOGGER.warning('User provided invalid data.')
+        return super().form_invalid(form)
+
+# TODO: ImageUpdateView
+# TODO: ImageDeleteView
+
+# TODO: mazání obrázků z adresáře: https://timonweb.com/django/cleanup-files-and-images-on-model-delete-in-django/
