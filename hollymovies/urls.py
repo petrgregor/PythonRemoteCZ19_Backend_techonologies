@@ -60,6 +60,7 @@ urlpatterns = [
     path('creator/<pk>/', CreatorTemplateView.as_view(), name='creator'),
 
     path('image/create/', ImageCreateView.as_view(), name='image_create'),
+    path('image/<pk>/', ImageDetailView.as_view(), name='image'),
 
     #path('accounts/login/', LoginView.as_view(), name='login'),
     path('accounts/login/', SubmittableLoginView.as_view(), name='login'),  # vlastní view pro login

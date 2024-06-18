@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import TemplateView, ListView, FormView, CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, ListView, FormView, CreateView, UpdateView, DeleteView, DetailView
 from django_addanother.views import CreatePopupMixin
 from django_addanother.widgets import AddAnotherWidgetWrapper
 
@@ -430,3 +430,8 @@ class ImageCreateView(PermissionRequiredMixin, CreateView):
 # TODO: ImageDeleteView
 
 # TODO: mazání obrázků z adresáře: https://timonweb.com/django/cleanup-files-and-images-on-model-delete-in-django/
+
+
+class ImageDetailView(DetailView):
+    model = Image
+    template_name = 'image.html'
