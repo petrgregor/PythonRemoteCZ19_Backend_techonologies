@@ -1,7 +1,11 @@
 from datetime import date
 
 from django.db.models import *  #(Model, CharField, ForeignKey, DO_NOTHING,
-                                #IntegerField, DateField, TextField, DateTimeField)
+
+from accounts.models import Profile
+
+
+#IntegerField, DateField, TextField, DateTimeField)
 
 
 class Genre(Model):
@@ -140,3 +144,15 @@ class Image(Model):
         return f"Image: {self.image}, {self.description}"
 
 
+class Review(Model):
+    movie = ForeignKey(Movie, on_delete=CASCADE, null=False, blank=False)
+    user = ForeignKey(Profile, on_delete=SET_NULL, null=True, blank=False)
+    rating = IntegerField(null=True, blank=True)
+    text = TextField(null=True, blank=True)
+
+    def __repr__(self):
+        return (f"Review(movie={self.movie}, user={self.user}, "
+                f"rating={self.rating}, text={self.text})")
+
+    def __str__(self):
+        return f"User: {self.user}, movie:{self.movie}, rating={self.rating}, text={self.text[:50]}"

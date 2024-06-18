@@ -109,12 +109,25 @@ class MovieView(View):
 class MovieTemplateView(TemplateView):
     template_name = "movie.html"
 
+    def post(self, request, *args, **kwargs):
+        context = self.get_context_data()
+        #if context["form_review"].is_valid():
+        # FIXME: každý uživatel by měl hodnotit maximálně jednou
+        Review.objects.create(movie=context["movie"],
+                              user=Profile.objects.get(user=request.user),
+                              rating=request.POST.get("rating"),
+                              text=request.POST.get("text")
+                              )
+        return render(request, "movie.html", context)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         pk = self.kwargs['pk']
         movie_ = Movie.objects.get(id=pk)
         context["movie"] = movie_
         context["images"] = Image.objects.filter(movie=movie_)
+        context["reviews"] = Review.objects.filter(movie=movie_)
+        context["form_review"] = ReviewModelForm
         return context
 
 
@@ -408,14 +421,14 @@ class PeopleDeleteView(StaffRequiredMixin, PermissionRequiredMixin, DeleteView):
 # TODO: CountryUpdateView
 # TODO: CountryDeleteView
 
-# TODO: ImageForm
+
 class ImageModelForm(ModelForm):
     class Meta:
         model = Image
         fields = '__all__'
 
 
-# TODO: ImageCreateView
+
 class ImageCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'form_image.html'
     form_class = ImageModelForm
@@ -435,3 +448,9 @@ class ImageCreateView(PermissionRequiredMixin, CreateView):
 class ImageDetailView(DetailView):
     model = Image
     template_name = 'image.html'
+
+
+class ReviewModelForm(ModelForm):
+    class Meta:
+        model = Review
+        fields = ['rating', 'text']
