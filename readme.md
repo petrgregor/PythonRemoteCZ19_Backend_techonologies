@@ -303,6 +303,8 @@ MEDIA_URL = 'images/'
 V `urls.py` přidáme za konec seznamu cest:
 `+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)`
 
+V template zobrazujeme obrázek pomocí `<img src="{{ image.image.url }}">`
+
 ## Rady a tipy pro finální projekt
 
 - všichni v týmu musí mít stejnou verzi Djanga (i ostatních balíčků)
