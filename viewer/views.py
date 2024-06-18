@@ -428,7 +428,6 @@ class ImageModelForm(ModelForm):
         fields = '__all__'
 
 
-
 class ImageCreateView(PermissionRequiredMixin, CreateView):
     template_name = 'form_image.html'
     form_class = ImageModelForm
